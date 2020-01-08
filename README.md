@@ -1,3 +1,5 @@
+![](https://github.com/unchartedsky/discourse/workflows/Dockerize/badge.svg)
+
 # Discourse on Travis-CI
 
 Discourse의 도커 이미지를 Travis-CI를 이용해 만드는 프로젝트입니다. Discourse의 `launcher.sh` 스크립트가 Mac에서는 오류를 내뱉기 때문에 어쩔 수 없이 Travis-CI의 리눅스 머신을 이용하기로 합니다.
