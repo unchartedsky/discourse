@@ -1,0 +1,35 @@
+name: Docker Image CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - uses: zhulik/redis-action@1.1.0
+      with:
+        redis version: '5'
+        number of databases: 100
+    - uses: harmon758/postgresql-action@v1
+      with:
+        postgresql version: '11'  # See https://hub.docker.com/_/postgres for available versions
+    - name: Install dependencies
+      run: |
+        curl -sL https://github.com/discourse/discourse_docker/archive/master.tar.gz | tar xz
+        cd discourse_docker-master
+        cp samples/data.yml containers/
+        cp ../web_only.yml containers/
+        # - sed -i "s/localhost/$(hostname)/g" containers/web_only.yml
+    - name: Prepare
+      run: |
+        sudo apt-get install -y postgresql-client
+        psql -c 'create database discourse;' -U postgres
+    - name: Build
+      run: |
+        ./launcher bootstrap web_only --docker-args "--network=host"
+    - name: Publish to Registry
+      run: |
+        docker login -u "${GITHUB_ACTOR}" -p "${GITHUB_TOKEN}"
+        docker tag local_discourse/web_only docker.pkg.github.com/unchartedsky/discourse/discourse:latest
+        docker push docker.pkg.github.com/unchartedsky/discourse/discourse:latest
