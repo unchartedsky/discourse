@@ -1,12 +1,21 @@
 name: Docker Image CI
 
-on: [push]
+on:
+  push:
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    # At 00:00 on Sunday.
+    # https://crontab.guru/#0_0_*_*_7
+    - cron:  '30 3 * * *'
+
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
+    - name: setup-docker
+      uses: docker-practice/actions-setup-docker@0.0.1
     - uses: zhulik/redis-action@1.1.0
       with:
         redis version: '5'
@@ -14,6 +23,7 @@ jobs:
     - uses: harmon758/postgresql-action@v1
       with:
         postgresql version: '11'  # See https://hub.docker.com/_/postgres for available versions
+        postgresql db: discourse
     - name: Install dependencies
       run: |
         curl -sL https://github.com/discourse/discourse_docker/archive/master.tar.gz | tar xz
@@ -21,15 +31,25 @@ jobs:
         cp samples/data.yml containers/
         cp ../web_only.yml containers/
         # - sed -i "s/localhost/$(hostname)/g" containers/web_only.yml
-    - name: Prepare
-      run: |
-        sudo apt-get install -y postgresql-client
-        psql -c 'create database discourse;' -U postgres
+    # - name: Prepare
+    #   run: |
+    #     sudo apt-get install -y postgresql-client
+    #     psql -c 'create database discourse;' -U postgres
     - name: Build
       run: |
+        cd discourse_docker-master
         ./launcher bootstrap web_only --docker-args "--network=host"
+    - uses: azure/docker-login@v1
+      with:
+        login-server: docker.pkg.github.com
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
     - name: Publish to Registry
       run: |
-        docker login -u "${GITHUB_ACTOR}" -p "${GITHUB_TOKEN}"
+        git_hash=$(git rev-parse --short "$GITHUB_SHA")
+
         docker tag local_discourse/web_only docker.pkg.github.com/unchartedsky/discourse/discourse:latest
+        docker tag local_discourse/web_only docker.pkg.github.com/unchartedsky/discourse/discourse:${git_hash}
+
         docker push docker.pkg.github.com/unchartedsky/discourse/discourse:latest
+        docker push docker.pkg.github.com/unchartedsky/discourse/discourse:${git_hash}

@@ -101,7 +101,6 @@ hooks:
           - git clone https://github.com/cpradio/discourse-plugin-checklist.git
           - git clone https://github.com/discourse/discourse-voting.git
           - git clone https://github.com/angusmcleod/discourse-topic-previews.git
-          - git clone https://github.com/tcreativo/plugin_discourse_spreadsheet.git
           - git clone https://github.com/angusmcleod/discourse-question-answer.git
           - git clone https://github.com/discourse/discourse-chat-integration.git
           - git clone https://github.com/davidtaylorhq/discourse-chat-ifttt.git
@@ -122,14 +121,6 @@ run:
   ## If you want to authorized additional users, uncomment and change:
   #- exec: ssh-import-id username
   #- exec: ssh-import-id anotherusername
-
-  - exec:
-      cd: /var/www/discourse
-      cmd:
-        - sed -i 's/GlobalSetting.serve_static_assets/true/' config/environments/production.rb
-        - bash -c "touch -a /shared/log/rails/{sidekiq,puma.err,puma}.log"
-        - bash -c "ln -s /shared/log/rails/{sidekiq,puma.err,puma}.log log/"
-        - sed -i 's/default \$scheme;/default https;/' /etc/nginx/conf.d/discourse.conf
 
   - exec: echo "End of custom commands"
   - exec: awk -F\# '{print $1;}' ~/.ssh/authorized_keys | awk 'BEGIN { print "Authorized SSH keys for this container:"; } NF>=2 {print $NF;}'
