@@ -101,6 +101,7 @@ hooks:
           - git clone https://github.com/cpradio/discourse-plugin-checklist.git
           - git clone https://github.com/discourse/discourse-voting.git
           - git clone https://github.com/angusmcleod/discourse-topic-previews.git
+          # - git clone https://github.com/tcreativo/plugin_discourse_spreadsheet.git
           - git clone https://github.com/angusmcleod/discourse-question-answer.git
           - git clone https://github.com/discourse/discourse-chat-integration.git
           - git clone https://github.com/davidtaylorhq/discourse-chat-ifttt.git
@@ -108,6 +109,7 @@ hooks:
           - git clone https://github.com/discourse/discourse-data-explorer.git
           - git clone https://github.com/sekhat/discourse-yuml.git
           - git clone https://github.com/kasperpeulen/discourse-mathjax.git
+          - git clone https://github.com/discourse/discourse-yearly-review.git
 
 ## Remember, this is YAML syntax - you can only have one block with a name
 run:
