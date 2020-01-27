@@ -118,6 +118,8 @@ hooks:
           - git clone https://github.com/discourse/discourse-rss-polling.git
           - git clone https://github.com/paviliondev/discourse-locations.git
           - git clone https://github.com/rimian/discourse-subscriptions.git
+          # - git clone https://github.com/pmusaraj/discourse-sidebar-blocks.git
+          - git clone https://github.com/techAPJ/discourse-custom-topic-button.git
 
 ## Remember, this is YAML syntax - you can only have one block with a name
 run:
