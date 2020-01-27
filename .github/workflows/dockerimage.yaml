@@ -8,7 +8,6 @@ on:
     # https://crontab.guru/#0_0_*_*_7
     - cron:  '30 3 * * *'
 
-
 jobs:
   build:
     runs-on: ubuntu-latest

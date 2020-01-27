@@ -37,7 +37,7 @@ params:
   ## Which Git revision should this container use? (default: tests-passed)
   #version: tests-passed
 
-  upload_size: 64m
+  upload_size: 256m
 
 
 env:
@@ -100,16 +100,24 @@ hooks:
           - git clone https://github.com/davidtaylorhq/discourse-whos-online.git
           - git clone https://github.com/cpradio/discourse-plugin-checklist.git
           - git clone https://github.com/discourse/discourse-voting.git
-          - git clone https://github.com/angusmcleod/discourse-topic-previews.git
           # - git clone https://github.com/tcreativo/plugin_discourse_spreadsheet.git
           - git clone https://github.com/angusmcleod/discourse-question-answer.git
           - git clone https://github.com/discourse/discourse-chat-integration.git
           - git clone https://github.com/davidtaylorhq/discourse-chat-ifttt.git
           - git clone https://github.com/upbitit/discourse-mailgun.git
-          - git clone https://github.com/discourse/discourse-data-explorer.git
           - git clone https://github.com/sekhat/discourse-yuml.git
-          - git clone https://github.com/kasperpeulen/discourse-mathjax.git
+          # - git clone https://github.com/kasperpeulen/discourse-mathjax.git
+          - git clone https://github.com/discourse/discourse-math.git
           - git clone https://github.com/discourse/discourse-yearly-review.git
+          - git clone https://github.com/discourse/discourse-data-explorer.git
+          - git clone https://github.com/discourse/discourse-saved-searches.git
+          - git clone https://github.com/discourse/discourse-tooltips.git
+          # - git clone https://github.com/angusmcleod/discourse-topic-previews.git
+          - git clone https://github.com/discourse/discourse-topic-previews.git
+          - git clone https://github.com/discourse/discourse-linkify-words.git
+          - git clone https://github.com/discourse/discourse-rss-polling.git
+          - git clone https://github.com/paviliondev/discourse-locations.git
+          - git clone https://github.com/rimian/discourse-subscriptions.git
 
 ## Remember, this is YAML syntax - you can only have one block with a name
 run:
