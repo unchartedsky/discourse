@@ -37,6 +37,7 @@ jobs:
     - name: Build
       run: |
         cd discourse_docker-master
+        sleep 30
         ./launcher bootstrap web_only --docker-args "--network=host"
     - uses: azure/docker-login@v1
       with:
