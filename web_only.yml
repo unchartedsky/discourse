@@ -72,7 +72,7 @@ env:
   ## TODO: configure connectivity to the databases
   # DISCOURSE_DB_SOCKET: ''
   DISCOURSE_DB_USERNAME: postgres
-  # DISCOURSE_DB_PASSWORD: SOME_SECRET
+  DISCOURSE_DB_PASSWORD: postgres
   DISCOURSE_DB_HOST: localhost
   DISCOURSE_REDIS_HOST: localhost
 

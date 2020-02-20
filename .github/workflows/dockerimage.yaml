@@ -11,6 +11,22 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    # services:
+    #   redis:
+    #     image: redis
+    #     ports:
+    #     - 6379:6379
+    #     options: --entrypoint redis-server
+    #   postgres:
+    #     image: postgres:11
+    #     env:
+    #       POSTGRES_USER: postgres
+    #       POSTGRES_PASSWORD: postgres
+    #       POSTGRES_DB: discourse
+    #     ports:
+    #     - 5432:5432
+    #     options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 10
+
     steps:
     - uses: actions/checkout@master
     - name: setup-docker
@@ -19,10 +35,9 @@ jobs:
       with:
         redis version: '5'
         number of databases: 100
-    - uses: harmon758/postgresql-action@v1
-      with:
-        postgresql version: '11'  # See https://hub.docker.com/_/postgres for available versions
-        postgresql db: discourse
+    - name: Run PostgreSQL
+      run: |
+        docker run -d -p 5432:5432 --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 10 -e "POSTGRES_USER=postgres" -e "POSTGRES_PASSWORD=postgres" -e "POSTGRES_DB=discourse" -e GITHUB_ACTIONS=true postgres:11
     - name: Install dependencies
       run: |
         curl -sL https://github.com/discourse/discourse_docker/archive/master.tar.gz | tar xz
@@ -37,7 +52,6 @@ jobs:
     - name: Build
       run: |
         cd discourse_docker-master
-        sleep 30
         ./launcher bootstrap web_only --docker-args "--network=host"
     - uses: azure/docker-login@v1
       with:
