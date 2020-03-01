@@ -120,6 +120,11 @@ hooks:
           - git clone https://github.com/rimian/discourse-subscriptions.git
           # - git clone https://github.com/pmusaraj/discourse-sidebar-blocks.git
           - git clone https://github.com/techAPJ/discourse-custom-topic-button.git
+          - git clone https://github.com/discourse/Discourse-Tiles-image-gallery.git
+          - git clone https://github.com/hnb-ku/Discourse-Slick-image-gallery
+          - git clone https://github.com/tshenry/discourse-blog-post-styling
+          - git clone https://github.com/tshenry/discourse-last-seen-user-card-theme-component
+          - git clone https://github.com/B-iggy/discourse-theme-switcher
 
 ## Remember, this is YAML syntax - you can only have one block with a name
 run:
