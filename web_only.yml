@@ -115,7 +115,7 @@ hooks:
           # - git clone https://github.com/angusmcleod/discourse-topic-previews.git
           - git clone https://github.com/discourse/discourse-topic-previews.git
           - git clone https://github.com/discourse/discourse-linkify-words.git
-          - git clone https://github.com/discourse/discourse-rss-polling.git
+          # - git clone https://github.com/discourse/discourse-rss-polling.git
           - git clone https://github.com/paviliondev/discourse-locations.git
           - git clone https://github.com/rimian/discourse-subscriptions.git
           # - git clone https://github.com/pmusaraj/discourse-sidebar-blocks.git
