@@ -113,7 +113,7 @@ hooks:
           - git clone https://github.com/discourse/discourse-saved-searches.git
           - git clone https://github.com/discourse/discourse-tooltips.git
           # - git clone https://github.com/angusmcleod/discourse-topic-previews.git
-          - git clone https://github.com/discourse/discourse-topic-previews.git
+          # - git clone https://github.com/discourse/discourse-topic-previews.git
           - git clone https://github.com/discourse/discourse-linkify-words.git
           # - git clone https://github.com/discourse/discourse-rss-polling.git
           - git clone https://github.com/paviliondev/discourse-locations.git
