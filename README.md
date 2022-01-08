@@ -6,7 +6,7 @@
 
 Kubernetes용 Discourse 이미지를 만듭니다. Discourse의 `launcher.sh` 스크립트가 Mac에서는 오류를 내뱉기 때문에 어쩔 수 없이 Github Actions의 리눅스 머신을 이용하기로 합니다.
 
-## K8S 자료
+## Kubernetes 자료
 
 - [How to set up an internal team forum in half a day using Discourse](https://medium.freecodecamp.org/how-to-set-up-an-internal-team-forum-in-half-a-day-using-discourse-b13588d907fe)
 - [oursky/discourse-k8s](https://github.com/oursky/discourse-k8s)
