@@ -125,8 +125,8 @@ hooks:
           - git clone https://github.com/tshenry/discourse-blog-post-styling.git
           - git clone https://github.com/tshenry/discourse-last-seen-user-card-theme-component.git
           - git clone https://github.com/B-iggy/discourse-theme-switcher.git
-          - git clone https://github.com/berlindiamonds/discourse-sync-base.git
-          - git clone https://github.com/berlindiamonds/discourse-sync-to-googledrive.git
+          # - git clone https://github.com/berlindiamonds/discourse-sync-base.git
+          # - git clone https://github.com/berlindiamonds/discourse-sync-to-googledrive.git
 
 ## Remember, this is YAML syntax - you can only have one block with a name
 run:
