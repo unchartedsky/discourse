@@ -36,11 +36,11 @@ jobs:
         uses: docker-practice/actions-setup-docker@v1
       - uses: zhulik/redis-action@1.1.0
         with:
-          redis version: "6"
+          redis version: "7"
           number of databases: 100
       - name: Run PostgreSQL
         run: |
-          docker run -d -p 5432:5432 --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 10 -e "POSTGRES_USER=postgres" -e "POSTGRES_PASSWORD=postgres" -e "POSTGRES_DB=discourse" -e GITHUB_ACTIONS=true postgres:11
+          docker run -d -p 5432:5432 --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 10 -e "POSTGRES_USER=postgres" -e "POSTGRES_PASSWORD=postgres" -e "POSTGRES_DB=discourse" -e GITHUB_ACTIONS=true postgres:15
       - name: Install dependencies
         run: |
           curl -sL https://github.com/discourse/discourse_docker/archive/main.tar.gz | tar xz
