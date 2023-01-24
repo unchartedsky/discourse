@@ -128,7 +128,7 @@ hooks:
           # - git clone https://github.com/berlindiamonds/discourse-sync-base.git
           # - git clone https://github.com/berlindiamonds/discourse-sync-to-googledrive.git
           - git clone https://github.com/discourse/discourse-reactions.git
-          - git clone https://github.com/discourse/discourse-assign.git
+          # - git clone https://github.com/discourse/discourse-assign.git
 
 ## Remember, this is YAML syntax - you can only have one block with a name
 run:
