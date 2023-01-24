@@ -43,8 +43,8 @@ jobs:
           docker run -d -p 5432:5432 --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 10 -e "POSTGRES_USER=postgres" -e "POSTGRES_PASSWORD=postgres" -e "POSTGRES_DB=discourse" -e GITHUB_ACTIONS=true postgres:11
       - name: Install dependencies
         run: |
-          curl -sL https://github.com/discourse/discourse_docker/archive/master.tar.gz | tar xz
-          cd discourse_docker-master
+          curl -sL https://github.com/discourse/discourse_docker/archive/main.tar.gz | tar xz
+          cd discourse_docker-main
           cp samples/data.yml containers/
           cp ../web_only.yml containers/
           # - sed -i "s/localhost/$(hostname)/g" containers/web_only.yml
@@ -54,7 +54,7 @@ jobs:
       #     psql -c 'create database discourse;' -U postgres
       - name: Build
         run: |
-          cd discourse_docker-master
+          cd discourse_docker-main
           ./launcher bootstrap web_only --docker-args "--network=host"
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v1
