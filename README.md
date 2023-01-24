@@ -2,7 +2,7 @@
 
 # Discourse on Kubernetes
 
-> [bitnami/discourse - Docker Hub](https://hub.docker.com/r/bitnami/discourse/)가 더 나은 대안일 수도 있습니다.
+> MAYBE [bitnami/discourse - Docker Hub](https://hub.docker.com/r/bitnami/discourse/)가 더 나은 대안일 수도 있습니다.
 
 Kubernetes용 Discourse 이미지를 만듭니다. Discourse의 `launcher.sh` 스크립트가 Mac에서는 오류를 내뱉기 때문에 어쩔 수 없이 Github Actions의 리눅스 머신을 이용하기로 합니다.
 
