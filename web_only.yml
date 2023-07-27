@@ -101,11 +101,11 @@ hooks:
           - git clone https://github.com/cpradio/discourse-plugin-checklist.git
           - git clone https://github.com/discourse/discourse-voting.git
           # - git clone https://github.com/tcreativo/plugin_discourse_spreadsheet.git
-          - git clone https://github.com/angusmcleod/discourse-question-answer.git
+          - git clone https://github.com/discourse/discourse-post-voting.git
           - git clone https://github.com/discourse/discourse-chat-integration.git
           # - git clone https://github.com/davidtaylorhq/discourse-chat-ifttt.git
           - git clone https://github.com/upbitit/discourse-mailgun.git
-          - git clone https://github.com/sekhat/discourse-yuml.git
+          # - git clone https://github.com/sekhat/discourse-yuml.git
           # - git clone https://github.com/kasperpeulen/discourse-mathjax.git
           - git clone https://github.com/discourse/discourse-math.git
           - git clone https://github.com/discourse/discourse-yearly-review.git
@@ -117,14 +117,14 @@ hooks:
           - git clone https://github.com/discourse/discourse-linkify-words.git
           - git clone https://github.com/discourse/discourse-rss-polling.git
           - git clone https://github.com/paviliondev/discourse-locations.git
-          - git clone https://github.com/rimian/discourse-subscriptions.git
+          - git clone https://github.com/discourse/discourse-subscriptions.git
           # - git clone https://github.com/pmusaraj/discourse-sidebar-blocks.git
-          - git clone https://github.com/techAPJ/discourse-custom-topic-button.git
+          # - git clone https://github.com/techAPJ/discourse-custom-topic-button.git
           - git clone https://github.com/discourse/Discourse-Tiles-image-gallery.git
           - git clone https://github.com/hnb-ku/Discourse-Slick-image-gallery.git
-          - git clone https://github.com/tshenry/discourse-blog-post-styling.git
-          - git clone https://github.com/tshenry/discourse-last-seen-user-card-theme-component.git
-          - git clone https://github.com/B-iggy/discourse-theme-switcher.git
+          # - git clone https://github.com/tshenry/discourse-blog-post-styling.git
+          # - git clone https://github.com/tshenry/discourse-last-seen-user-card-theme-component.git
+          # - git clone https://github.com/B-iggy/discourse-theme-switcher.git
           # - git clone https://github.com/berlindiamonds/discourse-sync-base.git
           # - git clone https://github.com/berlindiamonds/discourse-sync-to-googledrive.git
           - git clone https://github.com/discourse/discourse-reactions.git
