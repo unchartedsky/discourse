@@ -1,4 +1,4 @@
-![](https://github.com/unchartedsky/discourse/workflows/Dockerize/badge.svg)
+![](https://github.com/unchartedsky/discourse/workflows/discourse/badge.svg)
 
 # Discourse on Kubernetes
 
