@@ -3,10 +3,12 @@
 
 templates:
   - "templates/web.template.yml"
+  ## Uncomment the next line to enable the IPv6 listener
+  #- "templates/web.ipv6.template.yml"
   - "templates/web.ratelimited.template.yml"
-## Uncomment these two lines if you wish to add Lets Encrypt (https)
-  # - "templates/web.ssl.template.yml"
-  # - "templates/web.letsencrypt.ssl.template.yml"
+  ## Uncomment these two lines if you wish to add Lets Encrypt (https)
+  #- "templates/web.ssl.template.yml"
+  #- "templates/web.letsencrypt.ssl.template.yml"
 
 ## which TCP/IP ports should this container expose?
 ## If you want Discourse to share a port with another webserver like Apache or nginx,
@@ -145,7 +147,7 @@ run:
 
   - exec: echo "End of custom commands"
   - exec: awk -F\# '{print $1;}' ~/.ssh/authorized_keys | awk 'BEGIN { print "Authorized SSH keys for this container:"; } NF>=2 {print $NF;}'
-  - exec: apt remove -y postgresql-13 postgresql-client-13 postgresql-client-common postgresql-common
   - exec: apt-get update -y && apt-get upgrade -y
+  - exec: apt remove -y postgresql-13 postgresql-client-13 postgresql-client-common postgresql-common
   - exec: apt-get install -y postgresql-15 postgresql-client-15
   - exec: echo 'export PATH="/usr/lib/postgresql/15/bin:$PATH"' > /etc/profile.d/postgresql-15.sh

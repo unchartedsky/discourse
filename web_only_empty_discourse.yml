@@ -119,5 +119,6 @@ run:
   - exec: echo "End of custom commands"
   - exec: awk -F\# '{print $1;}' ~/.ssh/authorized_keys | awk 'BEGIN { print "Authorized SSH keys for this container:"; } NF>=2 {print $NF;}'
   - exec: apt-get update -y && apt-get upgrade -y
+  - exec: apt remove -y postgresql-13 postgresql-client-13 postgresql-client-common postgresql-common
   - exec: apt-get install -y postgresql-15 postgresql-client-15
   - exec: echo 'export PATH="/usr/lib/postgresql/15/bin:$PATH"' > /etc/profile.d/postgresql-15.sh
