@@ -34,7 +34,6 @@ jobs:
         run: |
           set -x
           docker version
-          cat /etc/docker/daemon.json
           docker buildx version
           docker buildx ls
 
