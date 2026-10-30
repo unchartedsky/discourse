@@ -103,7 +103,7 @@ hooks:
           - git clone https://github.com/discourse/discourse-voting.git
           # - git clone https://github.com/tcreativo/plugin_discourse_spreadsheet.git
           # - git clone https://github.com/davidtaylorhq/discourse-chat-ifttt.git
-          - git clone https://github.com/upbitit/discourse-mailgun.git
+          # - git clone https://github.com/upbitit/discourse-mailgun.git  # 2026-10-30 레포 삭제(404) — 설치 불가
           # - git clone https://github.com/sekhat/discourse-yuml.git
           # - git clone https://github.com/kasperpeulen/discourse-mathjax.git
           - git clone https://github.com/discourse/discourse-yearly-review.git
