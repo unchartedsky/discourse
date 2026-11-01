@@ -144,4 +144,6 @@ run:
   - exec: apt-get install -y postgresql-15 postgresql-client-15 postgresql-15-pgvector
   # 외부 PG17 서버 대상 pg_dump(백업)용 — Debian update-alternatives가 /usr/bin/pg_dump를 17로 전환
   - exec: apt-get install -y postgresql-client-17
+  # base 이미지가 남긴 /etc/postgresql/18 stray cluster stub을 지운다 — pg_wrapper가 설치되지 않은 18을 기본으로 잡아 pg_dump가 실패함
+  - exec: rm -rf /etc/postgresql/18
   - exec: echo 'export PATH="/usr/lib/postgresql/15/bin:$PATH"' > /etc/profile.d/postgresql-15.sh
