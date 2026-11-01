@@ -112,7 +112,7 @@ hooks:
           # - git clone https://github.com/angusmcleod/discourse-topic-previews.git
           # - git clone https://github.com/discourse/discourse-topic-previews.git
           - git clone https://github.com/discourse/discourse-linkify-words.git
-          - git clone https://github.com/paviliondev/discourse-locations.git
+          # - git clone https://github.com/paviliondev/discourse-locations.git  # 2026-11-01 부트마다 공개 Nominatim 실시간 지오코딩 테스트 쿼리 → 공유 IP 레이트리밋 시 부트 실패(GeocoderError) — CI 환경과 양립 불가, 설치 중단
           # - git clone https://github.com/pmusaraj/discourse-sidebar-blocks.git
           # - git clone https://github.com/techAPJ/discourse-custom-topic-button.git
           - git clone https://github.com/discourse/Discourse-Tiles-image-gallery.git
