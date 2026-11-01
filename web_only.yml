@@ -100,7 +100,7 @@ hooks:
           # - git clone https://github.com/discourse/discourse-spoiler-alert.git  # 2026-11-01 archived(3년+) + core AdminDashboardData 제거로 활성화 NameError — 설치 중단
           - git clone https://github.com/davidtaylorhq/discourse-whos-online.git
           # - git clone https://github.com/cpradio/discourse-plugin-checklist.git  # 2026-11-01 archived(2023-08 이후 방치) + core AdminDashboardData 제거로 활성화 NameError — 설치 중단
-          - git clone https://github.com/discourse/discourse-voting.git
+          # - git clone https://github.com/discourse/discourse-voting.git  # 2026-11-01 archived(2025-07) + core에 discourse-topic-voting 번들됨(중복) + CategoriesControllerExtension 제거로 활성화 NameError — 설치 중단
           # - git clone https://github.com/tcreativo/plugin_discourse_spreadsheet.git
           # - git clone https://github.com/davidtaylorhq/discourse-chat-ifttt.git
           # - git clone https://github.com/upbitit/discourse-mailgun.git  # 2026-10-30 레포 삭제(404) — 설치 불가
