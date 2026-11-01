@@ -97,10 +97,10 @@ hooks:
         cd: $home/plugins
         cmd:
           - git clone https://github.com/discourse/docker_manager.git
-          # - git clone https://github.com/discourse/discourse-spoiler-alert.git  # 2026-11-01 archived(3년+) + core AdminDashboardData 제거로 활성화 NameError — 설치 중단
+          # - git clone https://github.com/discourse/discourse-spoiler-alert.git  # 2026-11-01 core에 번들됨(plugins/spoiler-alert) — 클론은 archived 사본이라 NameError, 제거해도 무손실
           - git clone https://github.com/davidtaylorhq/discourse-whos-online.git
-          # - git clone https://github.com/cpradio/discourse-plugin-checklist.git  # 2026-11-01 archived(2023-08 이후 방치) + core AdminDashboardData 제거로 활성화 NameError — 설치 중단
-          # - git clone https://github.com/discourse/discourse-voting.git  # 2026-11-01 archived(2025-07) + core에 discourse-topic-voting 번들됨(중복) + CategoriesControllerExtension 제거로 활성화 NameError — 설치 중단
+          # - git clone https://github.com/cpradio/discourse-plugin-checklist.git  # 2026-11-01 core에 번들됨(plugins/checklist) — 클론은 archived 사본이라 NameError, 제거해도 무손실
+          # - git clone https://github.com/discourse/discourse-voting.git  # 2026-11-01 core에 번들됨(plugins/discourse-topic-voting) — 클론은 archived 사본이라 NameError, 제거해도 무손실
           # - git clone https://github.com/tcreativo/plugin_discourse_spreadsheet.git
           # - git clone https://github.com/davidtaylorhq/discourse-chat-ifttt.git
           # - git clone https://github.com/upbitit/discourse-mailgun.git  # 2026-10-30 레포 삭제(404) — 설치 불가
@@ -112,7 +112,7 @@ hooks:
           # - git clone https://github.com/angusmcleod/discourse-topic-previews.git
           # - git clone https://github.com/discourse/discourse-topic-previews.git
           - git clone https://github.com/discourse/discourse-linkify-words.git
-          # - git clone https://github.com/paviliondev/discourse-locations.git  # 2026-11-01 부트마다 공개 Nominatim 실시간 지오코딩 테스트 쿼리 → 공유 IP 레이트리밋 시 부트 실패(GeocoderError) — CI 환경과 양립 불가, 설치 중단
+          # - git clone https://github.com/paviliondev/discourse-locations.git  # 2026-11-01 부트마다 공개 Nominatim 실시간 지오코딩 → 공유 IP CI에서 비결정적으로 부트 실패 — 코어 대체 없음, 이 이미지는 위치·지오코딩 기능 제외 (README 참조)
           # - git clone https://github.com/pmusaraj/discourse-sidebar-blocks.git
           # - git clone https://github.com/techAPJ/discourse-custom-topic-button.git
           - git clone https://github.com/discourse/Discourse-Tiles-image-gallery.git
