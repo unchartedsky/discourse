@@ -140,5 +140,6 @@ run:
   - exec: awk -F\# '{print $1;}' ~/.ssh/authorized_keys | awk 'BEGIN { print "Authorized SSH keys for this container:"; } NF>=2 {print $NF;}'
   - exec: apt-get update -y && apt-get upgrade -y
   - exec: apt remove -y postgresql-13 postgresql-client-13 postgresql-client-common postgresql-common
-  - exec: apt-get install -y postgresql-15 postgresql-client-15
+  # Discourse main의 structure.sql가 CREATE EXTENSION vector를 요구 — base 이미지에 내장된 PGDG 저장소에서 pgvector 패키지를 함께 설치
+  - exec: apt-get install -y postgresql-15 postgresql-client-15 postgresql-15-pgvector
   - exec: echo 'export PATH="/usr/lib/postgresql/15/bin:$PATH"' > /etc/profile.d/postgresql-15.sh
