@@ -8,7 +8,7 @@ Kubernetes용 Discourse 이미지를 만듭니다. Discourse의 `launcher.sh` �
 
 ## 플러그인 운영 정책 (2026-11-01 정리)
 
-이 저장소는 Discourse upstream master를 추적해 매 빌드마다 최신 코드를 가져옵니다. 이 정책을 유지하기로 했으므로, upstream 변경이 플러그인 호환성을 깨뜨리면 빌드가 실패하고 그때마다 아래와 같은 정리가 필요할 수 있습니다.
+이 저장소는 Discourse upstream(`discourse/discourse` main 브랜치)을 추적해 매 빌드마다 최신 코드를 가져옵니다. 이 정책을 유지하기로 했으므로, upstream 변경이 플러그인 호환성을 깨뜨리면 빌드가 실패하고 그때마다 아래와 같은 정리가 필요할 수 있습니다.
 
 ### 코어 번들로 대체됨 (무손실)
 
