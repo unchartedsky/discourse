@@ -99,7 +99,7 @@ hooks:
           - git clone https://github.com/discourse/docker_manager.git
           - git clone https://github.com/discourse/discourse-spoiler-alert.git
           - git clone https://github.com/davidtaylorhq/discourse-whos-online.git
-          - git clone https://github.com/cpradio/discourse-plugin-checklist.git
+          # - git clone https://github.com/cpradio/discourse-plugin-checklist.git  # 2026-11-01 archived(2023-08 이후 방치) + core AdminDashboardData 제거로 활성화 NameError — 설치 중단
           - git clone https://github.com/discourse/discourse-voting.git
           # - git clone https://github.com/tcreativo/plugin_discourse_spreadsheet.git
           # - git clone https://github.com/davidtaylorhq/discourse-chat-ifttt.git
